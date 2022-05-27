@@ -9,13 +9,12 @@ const deskNames: string[] = ['Nebulae', 'Equinox', 'Pulsar', 'Lionel']
 // Waiting for the API to be ready
 WA.onInit().then(() => {
     console.log('Scripting API ready');
-    console.log('Player tags: ',WA.player.tags)
-    WA.chat.sendChatMessage('Hello world', 'Mr Robot');
+    // console.log('Player tags: ',WA.player.tags)
 
     
     for (const name of deskNames) {
         WA.room.onEnterLayer(name + 'OfficeTrigger').subscribe(() => {
-            currentPopup = WA.ui.openPopup(name+'Title', `Welcome to ${name} office`, [])
+            currentPopup = WA.ui.openPopup(name+'Title', `Welcome to ${name}'s office`, [])
         })
 
         WA.room.onLeaveLayer(name + 'OfficeTrigger').subscribe(closePopUp)
