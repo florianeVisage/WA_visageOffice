@@ -78,7 +78,7 @@
          "opacity":1,
          "properties":[
                 {
-                 "name":"openWebsite",
+                 "name":"old_openWebsite",
                  "type":"string",
                  "value":"https:\/\/app.sketchtogether.com\/s\/sketch\/DOK-T.2.1\/"
                 }, 
@@ -106,7 +106,7 @@
          "opacity":1,
          "properties":[
                 {
-                 "name":"openWebsite",
+                 "name":"old_openWebsite",
                  "type":"string",
                  "value":"https:\/\/app.sketchtogether.com\/s\/sketch\/1yLTw.8.1\/"
                 }, 
@@ -134,7 +134,7 @@
          "opacity":1,
          "properties":[
                 {
-                 "name":"openWebsite",
+                 "name":"old_openWebsite",
                  "type":"string",
                  "value":"https:\/\/app.sketchtogether.com\/s\/sketch\/HuBfw.1.1\/"
                 }, 
