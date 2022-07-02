@@ -4,7 +4,7 @@ import { bootstrapExtra } from "@workadventure/scripting-api-extra";
 console.log('Script started successfully');
 
 let currentPopup: any = undefined;
-const deskNames: string[] = ['Nebulae', 'Equinox', 'Pulsar', 'Constellation', 'Lionel', 'Chief_Architect']
+const deskNames: string[] = ['Nebulae', 'Pulsar', 'Constellation', 'Lionel', 'Chief_Architect']
 
 // Waiting for the API to be ready
 WA.onInit().then(() => {
