@@ -51,7 +51,7 @@
                         {
                          "name":"playAudio",
                          "type":"string",
-                         "value":"https:\/\/github.com\/florianeVisage\/WA_visageOffice\/blob\/master\/src\/assets\/birds.mp3"
+                         "value":"src\/assets\/birds2.mp3"
                         }],
                  "type":"tilelayer",
                  "visible":true,
