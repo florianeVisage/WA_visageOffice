@@ -22,7 +22,12 @@ WA.onInit().then(() => {
         currentPopup = WA.ui.openPopup('WarRoomTitle', 'War Room', [])
     })
     WA.room.onLeaveLayer('WarRoomOfficeTrigger').subscribe(closePopUp)
-
+    
+    WA.room.onEnterLayer('FeuEquinoxTrigger').subscribe(() => {
+        currentPopup = WA.ui.openPopup('FeuEquinoxTitle', `Old Equinox's office. Under works... Watch your step!`, [])
+    })
+    WA.room.onLeaveLayer('FeuEquinoxTrigger').subscribe(closePopUp)
+    
     // The line below bootstraps the Scripting API Extra library that adds a number of advanced properties/features to WorkAdventure
     bootstrapExtra().then(() => {
         console.log('Scripting API Extra ready');
