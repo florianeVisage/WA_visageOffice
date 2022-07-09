@@ -4,38 +4,73 @@ import { bootstrapExtra } from "@workadventure/scripting-api-extra";
 console.log('Script started successfully');
 
 let currentPopup: any = undefined;
-const deskNames: string[] = ['Nebulae', 'Pulsar', 'Constellation', 'Lionel', 'Chief_Architect']
+interface messageToShow {
+    deskName: string;
+    title: string;
+    sentence: string;
+}
+
+const messagesToShow: messageToShow[] = [{
+    deskName: 'NebulaeOfficeTrigger',
+    title: 'NebulaeTitle',
+    sentence: `Welcome to Nebulae's office`
+},
+{
+    deskName: 'PulsarOfficeTrigger',
+    title: 'PulsarTitle',
+    sentence: `Welcome to Pulsar's office`
+},
+{
+    deskName: 'ConstellationOfficeTrigger',
+    title: 'ConstellationTitle',
+    sentence: `Welcome to Constellation's office`
+},
+{
+    deskName: 'LionelOfficeTrigger',
+    title: 'LionelTitle',
+    sentence: `Welcome to Lionel's office`
+},
+{
+    deskName: 'SebOfficeTrigger',
+    title: 'SebTitle',
+    sentence: `Welcome to Seb's cozy office`
+},
+{
+    deskName: 'WarRoomOfficeTrigger',
+    title: 'WarRoomTitle',
+    sentence: `War Room`
+},
+{
+    deskName: 'FeuEquinoxTrigger',
+    title: 'FeuEquinoxTitle',
+    sentence: `Old Equinox's office. Under works... Watch your step!`
+},
+{
+    deskName: 'EquinoxGraveTrigger',
+    title: 'EquinoxGraveTitle',
+    sentence: `R.I.P Equinox office. To our beloved, funny and weird team... You will always be in our hearts, and we will never forget the time we spent together.`
+}]
 
 // Waiting for the API to be ready
 WA.onInit().then(() => {
     console.log('Scripting API ready');
     // console.log('Player tags: ',WA.player.tags)
-    
-    for (const name of deskNames) {
-        WA.room.onEnterLayer(name + 'OfficeTrigger').subscribe(() => {
-            currentPopup = WA.ui.openPopup(name+'Title', `Welcome to ${name}'s office`, [])
+
+    for (const room of messagesToShow) {
+        WA.room.onEnterLayer(room.deskName).subscribe(() => {
+            currentPopup = WA.ui.openPopup(room.title, room.sentence, [])
         })
-        WA.room.onLeaveLayer(name + 'OfficeTrigger').subscribe(closePopUp)
+        WA.room.onLeaveLayer(room.deskName).subscribe(closePopUp)
     }
 
-    WA.room.onEnterLayer('WarRoomOfficeTrigger').subscribe(() => {
-        currentPopup = WA.ui.openPopup('WarRoomTitle', 'War Room', [])
-    })
-    WA.room.onLeaveLayer('WarRoomOfficeTrigger').subscribe(closePopUp)
-    
-    WA.room.onEnterLayer('FeuEquinoxTrigger').subscribe(() => {
-        currentPopup = WA.ui.openPopup('FeuEquinoxTitle', `Old Equinox's office. Under works... Watch your step!`, [])
-    })
-    WA.room.onLeaveLayer('FeuEquinoxTrigger').subscribe(closePopUp)
-    
     // The line below bootstraps the Scripting API Extra library that adds a number of advanced properties/features to WorkAdventure
     bootstrapExtra().then(() => {
         console.log('Scripting API Extra ready');
     }).catch(e => console.error(e));
-    
+
 }).catch(e => console.error(e));
 
-function closePopUp(){
+function closePopUp() {
     if (currentPopup !== undefined) {
         currentPopup.close();
         currentPopup = undefined;
