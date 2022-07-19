@@ -28,7 +28,7 @@ const messagesToShow: messageToShow[] = [{
 {
     deskName: 'LionelOfficeTrigger',
     title: 'LionelTitle',
-    sentence: `Welcome to Lionel's office`
+    sentence: `Beware \n- Mean DevOps -\n He bites stranger...`
 },
 {
     deskName: 'SebOfficeTrigger',
@@ -39,16 +39,6 @@ const messagesToShow: messageToShow[] = [{
     deskName: 'WarRoomOfficeTrigger',
     title: 'WarRoomTitle',
     sentence: `War Room`
-},
-{
-    deskName: 'FeuEquinoxTrigger',
-    title: 'FeuEquinoxTitle',
-    sentence: `Old Equinox's office. Under works... Watch your step!`
-},
-{
-    deskName: 'EquinoxGraveTrigger',
-    title: 'EquinoxGraveTitle',
-    sentence: `R.I.P Equinox office. To our beloved, funny and weird team... You will always be in our hearts, and we will never forget the time we spent together.`
 }]
 
 // Waiting for the API to be ready
@@ -57,10 +47,10 @@ WA.onInit().then(() => {
     // console.log('Player tags: ',WA.player.tags)
 
     for (const room of messagesToShow) {
-        WA.room.onEnterLayer(room.deskName).subscribe(() => {
+        WA.room.onEnterLayer("Triggers/" + room.deskName).subscribe(() => {
             currentPopup = WA.ui.openPopup(room.title, room.sentence, [])
         })
-        WA.room.onLeaveLayer(room.deskName).subscribe(closePopUp)
+        WA.room.onLeaveLayer("Triggers/" + room.deskName).subscribe(closePopUp)
     }
 
     // The line below bootstraps the Scripting API Extra library that adds a number of advanced properties/features to WorkAdventure
