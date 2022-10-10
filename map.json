@@ -443,7 +443,7 @@
                          "value":"https:\/\/witeboard.com\/de00fa50-fb0f-11ec-a42f-893c05237d0e"
                         }, 
                         {
-                         "name":"jitsiRoomA",
+                         "name":"jitsiRoom",
                          "type":"string",
                          "value":"WarRoom"
                         }, 
@@ -1289,39 +1289,7 @@
          "draworder":"topdown",
          "id":117,
          "name":"JitsiMeeting",
-         "objects":[
-                {
-                 "height":176,
-                 "id":99,
-                 "name":"jitsiWarRoom",
-                 "properties":[
-                        {
-                         "name":"jitsiRoom",
-                         "type":"string",
-                         "value":"WarRoom"
-                        }, 
-                        {
-                         "name":"openWebsite",
-                         "type":"string",
-                         "value":"https:\/\/witeboard.com\/de00fa50-fb0f-11ec-a42f-893c05237d0e"
-                        }, 
-                        {
-                         "name":"openWebsitePolicy",
-                         "type":"string",
-                         "value":"fullscreen"
-                        }, 
-                        {
-                         "name":"openWebsiteTrigger",
-                         "type":"string",
-                         "value":"onicon"
-                        }],
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":372,
-                 "x":296,
-                 "y":553.333333333333
-                }],
+         "objects":[],
          "opacity":1,
          "type":"objectgroup",
          "visible":true,
